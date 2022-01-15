@@ -5,8 +5,9 @@ import Slider from "../components/Slider";
 import Words from "../components/Words";
 import ProductCard from "../components/ProductCard";
 import Location from "../components/Location";
+import axios from "axios";
 
-export default function Home() {
+export default function Home({ products }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -18,13 +19,20 @@ export default function Home() {
       <Slider />
       <Words />
       <div style={{ display: "flex" }}>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {products.map((product) => {
+          <ProductCard products={product} />;
+        })}
       </div>
-
       <Location />
     </div>
   );
 }
+
+export const getServerSideProps = async () => {
+  const res = await axios.get("http://localhost:3000/api/product");
+  const products = res.data;
+
+  return {
+    props: { products },
+  };
+};

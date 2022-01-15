@@ -5,14 +5,14 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
-function ProductCard() {
+function ProductCard({ products }) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="160"
-          image="https://media.ugaoo.com/catalog/product/cache/81d2f56800d33f099d2b369affd8e374/a/r/areca_medium_eyelevel_final.png"
+          image={products?.img}
           alt="green plant"
         />
         <CardContent>
@@ -22,13 +22,13 @@ function ProductCard() {
             component="div"
             style={{ color: "#798f18", fontWeight: "bold" }}
           >
-            Areca Palm Plant - Medium
+            {products?.name}
           </Typography>
           <Typography gutterBottom variant="h5" component="div">
-            $19.2
+            ${products?.price}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            {products?.desc}
           </Typography>
         </CardContent>
       </CardActionArea>
