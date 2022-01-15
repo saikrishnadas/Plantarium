@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #798f18;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.order__now {
+  display: flex;
+  flex-direction: column;
+}
+
+.center__container {
+  display: flex;
+  flex: 2;
+  justify-content: space-evenly;
+}
+
+.center__left {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 2;
+}
+
+.logo {
+  font-weight: bold;
+  text-align: center;
+}
+
+.center__right {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 2;
+}
